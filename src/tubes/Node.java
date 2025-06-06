@@ -1,27 +1,27 @@
 package tubes;
 
 public class Node {
-    private Produk produk;
-    private Node next;
+  private Produk data;
+  private Node next;
 
-    public Node(Produk produk) {
-        this.produk = produk;
-        this.next = null;
-    }
+  public Node(Produk data) {
+    this.data = data;
+    this.next = null;
+  }
 
-    public Produk getProduk() {
-        return produk;
-    }
+  public Produk getData() { 
+    return data; 
+  }
 
-    public void setProduk(Produk produk) {
-        this.produk = produk;
-    }
+  public void setData(Produk data) { 
+    this.data = data; 
+  }
 
-    public Node getNext() {
-        return next;
-    }
+  public Node getNext() { 
+    return next; 
+  }
 
-    public void setNext(Node next) {
-        this.next = next;
-    }
+  public void setNext(Node next) { 
+    this.next = next; 
+  }
 }
