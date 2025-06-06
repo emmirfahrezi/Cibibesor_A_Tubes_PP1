@@ -9,7 +9,7 @@ public class StrukturProduk {
 
   // Emmir Fahrezi
   // fitur tambah produk di awal
-   public void tambahHead(Produk data) {
+  public void tambahHead(Produk data) {
     Node newNode = new Node(data);
     newNode.setNext(HEAD);
     HEAD = newNode;
@@ -32,6 +32,31 @@ public class StrukturProduk {
     System.out.println("Produk ditambahkan di akhir (TAIL).");
   }
 
+  // Mohamad Faiz Khairan
+  // fitur Tambahkan Produk
+  public void tambahProduk(Produk data, int posisi) {
+    Node newNode = new Node(data);
+    if (isEmpty() || posisi <= 1) {
+      tambahHead(data);
+    } else {
+      Node curNode = HEAD;
+      Node prevNode = null;
+      int index = 1;
+      while (curNode != null && index < posisi) {
+        prevNode = curNode;
+        curNode = curNode.getNext();
+        index++;
+      }
+      if (prevNode != null) {
+        prevNode.setNext(newNode);
+        newNode.setNext(curNode);
+      } else {
+        tambahTail(data);
+      }
+      System.out.println("Produk ditambahkan di posisi ke-" + posisi);
+    }
+  }
+
   // fahri rizqon arsiansyah
   // fitur tampilkan produk
   public void tampilkanProduk() {
@@ -43,7 +68,7 @@ public class StrukturProduk {
       while (curNode != null) {
         Produk p = curNode.getData();
         System.out.println(posisi + ". " + p.getKode() + " - " + p.getNama() +
-          " | Stok: " + p.getStok() + " | Harga: Rp" + p.getHarga());
+            " | Stok: " + p.getStok() + " | Harga: Rp" + p.getHarga());
         curNode = curNode.getNext();
         posisi++;
       }
@@ -69,7 +94,7 @@ public class StrukturProduk {
 
   // andyka khaerulana
   // fituh hapus produk
-   public void hapusProduk(int posisi) {
+  public void hapusProduk(int posisi) {
     if (isEmpty()) {
       System.out.println("List kosong.");
       return;
@@ -95,4 +120,3 @@ public class StrukturProduk {
     }
   }
 }
-
