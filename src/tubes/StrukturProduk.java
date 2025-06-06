@@ -1,7 +1,5 @@
 package tubes;
 
-import java.io.*;
-
 public class StrukturProduk {
   public Node HEAD;
 
@@ -50,4 +48,33 @@ public class StrukturProduk {
       System.out.println("Posisi tidak ditemukan.");
     }
   }
+
+  // andyka khaerulana
+  // fituh hapus produk
+   public void hapusProduk(int posisi) {
+    if (isEmpty()) {
+      System.out.println("List kosong.");
+      return;
+    }
+    if (posisi == 1) {
+      HEAD = HEAD.getNext();
+      System.out.println("Produk posisi 1 berhasil dihapus.");
+      return;
+    }
+    Node curNode = HEAD;
+    Node prevNode = null;
+    int index = 1;
+    while (curNode != null && index < posisi) {
+      prevNode = curNode;
+      curNode = curNode.getNext();
+      index++;
+    }
+    if (curNode != null) {
+      prevNode.setNext(curNode.getNext());
+      System.out.println("Produk posisi " + posisi + " berhasil dihapus.");
+    } else {
+      System.out.println("Posisi tidak ditemukan.");
+    }
+  }
 }
+
