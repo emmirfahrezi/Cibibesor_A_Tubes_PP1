@@ -32,6 +32,24 @@ public class StrukturProduk {
     System.out.println("Produk ditambahkan di akhir (TAIL).");
   }
 
+  // fahri rizqon arsiansyah
+  // fitur tampilkan produk
+  public void tampilkanProduk() {
+    if (isEmpty()) {
+      System.out.println("Daftar produk kosong.");
+    } else {
+      Node curNode = HEAD;
+      int posisi = 1;
+      while (curNode != null) {
+        Produk p = curNode.getData();
+        System.out.println(posisi + ". " + p.getKode() + " - " + p.getNama() +
+          " | Stok: " + p.getStok() + " | Harga: Rp" + p.getHarga());
+        curNode = curNode.getNext();
+        posisi++;
+      }
+    }
+  }
+
   // hikmat pandu raharja
   // fitur update produk
   public void updateProduk(int posisi, Produk dataBaru) {
@@ -76,24 +94,5 @@ public class StrukturProduk {
       System.out.println("Posisi tidak ditemukan.");
     }
   }
-  
-  // fahri rizqon arsiansyah
-  // fitur tampilkan produk
-  public void tampilkanProduk() {
-    if (isEmpty()) {
-      System.out.println("Daftar produk kosong.");
-    } else {
-      Node curNode = HEAD;
-      int posisi = 1;
-      while (curNode != null) {
-        Produk p = curNode.getData();
-        System.out.println(posisi + ". " + p.getKode() + " - " + p.getNama() +
-          " | Stok: " + p.getStok() + " | Harga: Rp" + p.getHarga());
-        curNode = curNode.getNext();
-        posisi++;
-      }
-    }
-  }
 }
-
 
