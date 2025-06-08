@@ -139,4 +139,32 @@ public class StrukturProduk {
       System.out.println("Gagal menyimpan file: " + e.getMessage());
     }
   }
+
+  //andyka khaerulana
+  // fitur cariProduk
+  public void cariProduk(String keyword) {
+    if (isEmpty()) {
+      System.out.println("Daftar produk kosong.");
+      return;
+    }
+
+    Node curNode = HEAD;
+    int posisi = 1;
+    boolean ditemukan = false;
+
+    while (curNode != null) {
+      Produk p = curNode.getData();
+      if (p.getKategori().equalsIgnoreCase(keyword) || p.getNama().toLowerCase().contains(keyword.toLowerCase())) {
+        System.out.println("Posisi: " + posisi + " | [" + p.getKategori() + "] " + p.getNama() +
+          " | Stok: " + p.getStok() + " | Harga Satuan: Rp" + p.getHarga() + " | Total: Rp" + (p.getHarga() * p.getStok()));
+        ditemukan = true;
+      }
+      curNode = curNode.getNext();
+      posisi++;
+    }
+
+    if (!ditemukan) {
+      System.out.println("Produk \"" + keyword + "\" tidak ditemukan.");
+   }
+ }
 }
