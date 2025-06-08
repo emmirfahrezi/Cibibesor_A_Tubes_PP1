@@ -1,24 +1,24 @@
 package tubes;
 
 public class Produk {
-  private String kode;
+  private String kategori;
   private String nama;
   private int stok;
   private double harga;
 
-  public Produk(String kode, String nama, int stok, double harga) {
-    this.kode = kode;
+  public Produk(String kategori, String nama, int stok, double harga) {
+    this.kategori = kategori;
     this.nama = nama;
     this.stok = stok;
     this.harga = harga;
   }
 
-  public String getKode() { 
-    return kode; 
+  public String getKategori() { 
+    return kategori;
   }
 
-  public void setKode(String kode) { 
-    this.kode = kode; 
+  public void setKategori(String kategori) {
+    this.kategori = kategori; 
   }
 
   public String getNama() { 
@@ -43,7 +43,7 @@ public class Produk {
   }
 
   public String toFileString() {
-    return kode + ";" + nama + ";" + stok + ";" + harga;
+    return kategori + ";" + nama + ";" + stok + ";" + harga;
   }
 
   public static Produk fromFileString(String line) {

@@ -67,7 +67,7 @@ public class StrukturProduk {
       int posisi = 1;
       while (curNode != null) {
         Produk p = curNode.getData();
-        System.out.println(posisi + ". " + p.getKode() + " - " + p.getNama() +
+        System.out.println(posisi + ". " + p.getKategori() + " - " + p.getNama() +
             " | Stok: " + p.getStok() + " | Harga: Rp" + p.getHarga());
         curNode = curNode.getNext();
         posisi++;
