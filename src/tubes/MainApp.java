@@ -35,7 +35,7 @@ public class MainApp {
           Produk bebas = inputProduk(input);
           int size = list.getSize();
           int mid = size / 2 + 1;
-          list.tambahProduk(bebas, mid);
+          list.tambahMid(bebas);
           System.out.println("Produk ditambahkan di tengah");
           break;
         case 4:

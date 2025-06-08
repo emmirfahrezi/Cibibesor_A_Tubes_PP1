@@ -51,15 +51,19 @@ public class StrukturProduk {
 
   // Mohamad Faiz Khairan
   // fitur Tambahkan Produk
-  public void tambahProduk(Produk data, int posisi) {
+  // Ganti method tambahProduk menjadi tambahMid tanpa parameter posisi
+  public void tambahMid(Produk data) {
     Node newNode = new Node(data);
-    if (isEmpty() || posisi <= 1) {
+    int size = getSize();
+    int mid = size / 2 + 1;
+
+    if (isEmpty() || mid <= 1) {
       tambahHead(data);
     } else {
       Node curNode = HEAD;
       Node prevNode = null;
       int index = 1;
-      while (curNode != null && index < posisi) {
+      while (curNode != null && index < mid) {
         prevNode = curNode;
         curNode = curNode.getNext();
         index++;
@@ -70,7 +74,7 @@ public class StrukturProduk {
       } else {
         tambahTail(data);
       }
-      System.out.println("Produk ditambahkan di posisi ke-" + posisi);
+      System.out.println("Produk ditambahkan di tengah.");
     }
   }
 
