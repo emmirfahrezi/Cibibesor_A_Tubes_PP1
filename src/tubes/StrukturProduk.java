@@ -13,6 +13,17 @@ public class StrukturProduk {
     return HEAD == null;
   }
 
+  // Di dalam kelas StrukturProduk
+  public int getSize() {
+    int count = 0;
+    Node temp = HEAD;
+    while (temp != null) {
+      count++;
+      temp = temp.getNext();
+    }
+    return count;
+  }
+
   // Emmir Fahrezi
   // fitur tambah produk di awal
   public void tambahHead(Produk data) {
@@ -40,15 +51,19 @@ public class StrukturProduk {
 
   // Mohamad Faiz Khairan
   // fitur Tambahkan Produk
-  public void tambahProduk(Produk data, int posisi) {
+  // Ganti method tambahProduk menjadi tambahMid tanpa parameter posisi
+  public void tambahMid(Produk data) {
     Node newNode = new Node(data);
-    if (isEmpty() || posisi <= 1) {
+    int size = getSize();
+    int mid = size / 2 + 1;
+
+    if (isEmpty() || mid <= 1) {
       tambahHead(data);
     } else {
       Node curNode = HEAD;
       Node prevNode = null;
       int index = 1;
-      while (curNode != null && index < posisi) {
+      while (curNode != null && index < mid) {
         prevNode = curNode;
         curNode = curNode.getNext();
         index++;
@@ -59,7 +74,7 @@ public class StrukturProduk {
       } else {
         tambahTail(data);
       }
-      System.out.println("Produk ditambahkan di posisi ke-" + posisi);
+      System.out.println("Produk ditambahkan di tengah.");
     }
   }
 
@@ -142,7 +157,7 @@ public class StrukturProduk {
     }
   }
 
-  //andyka khaerulana
+  // andyka khaerulana
   // fitur cariProduk
   public void cariProduk(String keyword) {
     if (isEmpty()) {
@@ -158,7 +173,8 @@ public class StrukturProduk {
       Produk p = curNode.getData();
       if (p.getKategori().equalsIgnoreCase(keyword) || p.getNama().toLowerCase().contains(keyword.toLowerCase())) {
         System.out.println("Posisi: " + posisi + " | [" + p.getKategori() + "] " + p.getNama() +
-          " | Stok: " + p.getStok() + " | Harga Satuan: Rp" + p.getHarga() + " | Total: Rp" + (p.getHarga() * p.getStok()));
+            " | Stok: " + p.getStok() + " | Harga Satuan: Rp" + p.getHarga() + " | Total: Rp"
+            + (p.getHarga() * p.getStok()));
         ditemukan = true;
       }
       curNode = curNode.getNext();
@@ -167,12 +183,12 @@ public class StrukturProduk {
 
     if (!ditemukan) {
       System.out.println("Produk \"" + keyword + "\" tidak ditemukan.");
-   }
- }
+    }
+  }
 
- // Fahri rizqon arsiansyah
- // Fitur muatDariFile
- public void muatDariFile(String filename) {
+  // Fahri rizqon arsiansyah
+  // Fitur muatDariFile
+  public void muatDariFile(String filename) {
     try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
       String line;
       while ((line = br.readLine()) != null) {

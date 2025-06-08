@@ -33,9 +33,10 @@ public class MainApp {
           break;
         case 3:
           Produk bebas = inputProduk(input);
-          System.out.print("Posisi: ");
-          int pos = input.nextInt();
-          list.tambahProduk(bebas, pos);
+          int size = list.getSize();
+          int mid = size / 2 + 1;
+          list.tambahMid(bebas);
+          System.out.println("Produk ditambahkan di tengah");
           break;
         case 4:
           list.tampilkanProduk();

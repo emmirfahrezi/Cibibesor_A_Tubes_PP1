@@ -1,8 +1,0 @@
-bumbu;saos abc;30;3000.0
-bumbu;garam;50;2000.0
-minuman;kopi;50;2500.0
-makanan;nugget;50;30000.0
-bumbu;kecap manis;30;2000.0
-bumbu ;royko;50;2000.0
-elektronik;lampu philips 5w;20;5000.0
-elektronik;baterai abc;20;3000.0
