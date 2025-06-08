@@ -3,7 +3,7 @@ package tubes;
 import java.util.Scanner;
 
 public class MainApp {
-     public static void main(String[] args) {
+  public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     StrukturProduk list = new StrukturProduk();
     list.muatDariFile("produk.txt");
@@ -33,16 +33,18 @@ public class MainApp {
           break;
         case 3:
           Produk bebas = inputProduk(input);
-          System.out.print("Posisi: ");
-          int pos = input.nextInt();
-          list.tambahProduk(bebas, pos);
+          int size = list.getSize();
+          int mid = size / 2 + 1;
+          list.tambahProduk(bebas, mid);
+          System.out.println("Produk ditambahkan di tengah");
           break;
         case 4:
           list.tampilkanProduk();
           break;
         case 5:
           System.out.print("Posisi produk yang ingin diupdate: ");
-          int upos = input.nextInt(); input.nextLine();
+          int upos = input.nextInt();
+          input.nextLine();
           list.updateProduk(upos, inputProduk(input));
           break;
         case 6:
@@ -79,5 +81,5 @@ public class MainApp {
     double harga = input.nextDouble();
     input.nextLine();
     return new Produk(kategori, nama, stok, harga);
-    }
+  }
 }
