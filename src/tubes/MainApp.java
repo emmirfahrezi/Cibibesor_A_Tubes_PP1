@@ -11,9 +11,9 @@ public class MainApp {
     int pilihan;
     do {
       System.out.println("\n=== MENU TOKO KELONTONG ===");
-      System.out.println("1. Tambah Produk di HEAD");
-      System.out.println("2. Tambah Produk di TAIL");
-      System.out.println("3. Tambah Produk di POSISI TERTENTU");
+      System.out.println("1. Tambah Produk Cepat laku");
+      System.out.println("2. Tambah Produk Alat dan barang kebutuhan tambahan");
+      System.out.println("3. Tambah Produk Alat kebutuhan pokok dan berat");
       System.out.println("4. Tampilkan Produk");
       System.out.println("5. Update Produk");
       System.out.println("6. Hapus Produk");
