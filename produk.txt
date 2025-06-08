@@ -1,0 +1,2 @@
+minuman;ale ale;20;2000.0
+Makanan;taro;40;13000.0
