@@ -1,6 +1,8 @@
 package tubes;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -167,4 +169,19 @@ public class StrukturProduk {
       System.out.println("Produk \"" + keyword + "\" tidak ditemukan.");
    }
  }
+
+ // Fahri rizqon arsiansyah
+ // Fitur muatDariFile
+ public void muatDariFile(String filename) {
+    try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+      String line;
+      while ((line = br.readLine()) != null) {
+        Produk p = Produk.fromFileString(line);
+        tambahTail(p);
+      }
+      System.out.println("Data berhasil dimuat dari " + filename);
+    } catch (IOException e) {
+      System.out.println("File tidak ditemukan. Memulai dari data kosong.");
+    }
+  }
 }
