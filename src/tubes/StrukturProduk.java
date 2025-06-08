@@ -1,5 +1,9 @@
 package tubes;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class StrukturProduk {
   public Node HEAD;
 
@@ -117,6 +121,22 @@ public class StrukturProduk {
       System.out.println("Produk posisi " + posisi + " berhasil dihapus.");
     } else {
       System.out.println("Posisi tidak ditemukan.");
+    }
+  }
+
+  // Mohamad Faiz Khairan
+  // Fitur Simpan ke file
+  public void simpanKeFile(String filename) {
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename))) {
+      Node curNode = HEAD;
+      while (curNode != null) {
+        bw.write(curNode.getData().toFileString());
+        bw.newLine();
+        curNode = curNode.getNext();
+      }
+      System.out.println("Data berhasil disimpan ke " + filename);
+    } catch (IOException e) {
+      System.out.println("Gagal menyimpan file: " + e.getMessage());
     }
   }
 }
