@@ -1,4 +1,4 @@
-package tubes;
+package entity;
 
 public class Node {
   private Produk data;

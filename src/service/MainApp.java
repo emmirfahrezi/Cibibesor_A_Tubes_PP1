@@ -1,6 +1,8 @@
-package tubes;
+package service;
 
 import java.util.Scanner;
+
+import entity.Produk;
 
 public class MainApp {
      public static void main(String[] args) {
