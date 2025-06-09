@@ -1,9 +1,11 @@
-package tubes;
+package service;
 
 import java.util.Scanner;
 
+import entity.Produk;
+
 public class MainApp {
-  public static void main(String[] args) {
+     public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     StrukturProduk list = new StrukturProduk();
     list.muatDariFile("produk.txt");
@@ -11,9 +13,9 @@ public class MainApp {
     int pilihan;
     do {
       System.out.println("\n=== MENU TOKO KELONTONG ===");
-      System.out.println("1. Tambah Produk di HEAD");
-      System.out.println("2. Tambah Produk di TAIL");
-      System.out.println("3. Tambah Produk di POSISI TERTENTU");
+      System.out.println("1. Tambah Produk Sembako");
+      System.out.println("2. Tambah Produk Makanan dan Minuman Ringan");
+      System.out.println("3. Tambah Produk Alat kebutuhan Mandi Mencuci dan lain-lain");
       System.out.println("4. Tampilkan Produk");
       System.out.println("5. Update Produk");
       System.out.println("6. Hapus Produk");
@@ -43,8 +45,7 @@ public class MainApp {
           break;
         case 5:
           System.out.print("Posisi produk yang ingin diupdate: ");
-          int upos = input.nextInt();
-          input.nextLine();
+          int upos = input.nextInt(); input.nextLine();
           list.updateProduk(upos, inputProduk(input));
           break;
         case 6:
@@ -81,5 +82,5 @@ public class MainApp {
     double harga = input.nextDouble();
     input.nextLine();
     return new Produk(kategori, nama, stok, harga);
-  }
+    }
 }

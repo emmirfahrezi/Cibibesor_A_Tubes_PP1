@@ -1,4 +1,4 @@
-package tubes;
+package entity;
 
 public class Produk {
   private String kategori;

@@ -1,6 +1,7 @@
 makanan;lays;800;15000.0
 makanan;pilus;200;500.0
 elektronik;kipas;2323;90000.0
+shampo;clear;7;15000.0
 elektronik;lampu;100;16000.0
 minuman;ale ale;800;1000.0
 minuman;teh botol;500;6000.0
